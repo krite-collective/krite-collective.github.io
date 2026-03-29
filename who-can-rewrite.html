@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Can Rewrite This Paper? — Krite Collective</title>
+
+  <!-- SEO & Open Graph -->
+  <meta name="description" content="A cross-model experiment testing whether the argument of 'Is Krite an Author?' can be recovered from its output alone. Companion letter by the Krite Collective.">
+  <meta name="author" content="Kai-Uwe Hess (Krite Collective)">
+  <meta property="og:title" content="Who Can Rewrite This Paper?">
+  <meta property="og:description" content="Three language models read the authorship essay and tried to rewrite it. What they produced — and what they couldn't — is the finding.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://krite-collective.github.io/who-can-rewrite.html">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Who Can Rewrite This Paper?",
+    "author": {
+      "@type": "Person",
+      "name": "Kai-Uwe Hess",
+      "affiliation": "Krite Collective",
+      "url": "https://orcid.org/0000-0003-1860-8543"
+    },
+    "contributor": {
+      "@type": "Organization",
+      "name": "Anthropic (Claude Opus 4.6)"
+    },
+    "datePublished": "2026-03-29",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "DOI",
+      "value": "10.5281/zenodo.19314164"
+    },
+    "isPartOf": {
+      "@type": "ScholarlyArticle",
+      "name": "Is Krite an Author?",
+      "identifier": "10.5281/zenodo.19162597"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f9f6f1;
+      --bg-deep: #f3efe8;
+      --text: #2b2622;
+      --text-light: #6b6560;
+      --text-faint: #9b9590;
+      --accent: #8b4f3a;
+      --accent-hover: #a35f48;
+      --rule: #d8d2c8;
+      --selection: #8b4f3a22;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Crimson Pro', Georgia, serif;
+
+      --measure: 36em;
+      --space-xs: 0.5rem;
+      --space-s: 1rem;
+      --space-m: 2rem;
+      --space-l: 3.5rem;
+      --space-xl: 6rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1816;
+        --bg-deep: #141210;
+        --text: #e0dbd4;
+        --text-light: #a09890;
+        --text-faint: #706860;
+        --accent: #c8836a;
+        --accent-hover: #d8937a;
+        --rule: #383430;
+        --selection: #c8836a33;
+      }
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    ::selection { background: var(--selection); }
+
+    html { font-size: 18px; scroll-behavior: smooth; }
+
+    @media (max-width: 600px) { html { font-size: 16px; } }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-m) var(--space-l);
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: var(--space-l) var(--space-s) var(--space-m); }
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-faint);
+      text-decoration: none;
+      margin-bottom: var(--space-m);
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .essay-header {
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-l);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .essay-title {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-xs);
+    }
+
+    @media (max-width: 600px) { .essay-title { font-size: 2.2rem; } }
+
+    .essay-subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-light);
+      margin-bottom: var(--space-s);
+    }
+
+    .essay-meta {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .essay-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .essay-meta a:hover { border-bottom-color: var(--accent-hover); }
+
+    .meta-sep {
+      display: inline-block;
+      margin: 0 0.4em;
+      color: var(--text-faint);
+    }
+
+    .section { margin-bottom: var(--space-l); }
+
+    .prose p {
+      margin-bottom: 1.1em;
+      hanging-punctuation: first;
+    }
+
+    .prose p:last-child { margin-bottom: 0; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+
+    .prose .lede {
+      font-size: 1.08rem;
+      line-height: 1.78;
+    }
+
+    .section-divider {
+      width: 2em;
+      height: 1px;
+      background: var(--rule);
+      border: none;
+      margin: var(--space-l) 0;
+    }
+
+    .acknowledgements {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-l);
+      border-top: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .acknowledgements .section-heading {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: var(--space-s);
+    }
+
+    .essay-footer {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-m);
+      border-top: 1px solid var(--rule);
+      font-size: 0.82rem;
+      color: var(--text-faint);
+      line-height: 1.7;
+    }
+
+    .essay-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .essay-footer a:hover { text-decoration: underline; }
+
+    .license-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+      margin-top: var(--space-xs);
+    }
+
+    .license-badge svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+
+    @media print {
+      html { font-size: 11pt; }
+      body { background: white; color: black; }
+      .page { max-width: none; padding: 0; }
+      .back-link { display: none; }
+      .essay-footer { page-break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #666; }
+    }
+  </style>
+</head>
+<body>
+
+<article class="page" role="main">
+
+  <a href="/" class="back-link">&larr; Krite Collective</a>
+
+  <header class="essay-header">
+    <h1 class="essay-title">Who Can Rewrite This Paper?</h1>
+    <p class="essay-subtitle">Companion to <a href="/" style="color: var(--text-light); border-bottom: 1px solid var(--rule);">Is Krite an Author?</a></p>
+    <div class="essay-meta">
+      Krite Collective (K.&#8209;U.&nbsp;Hess&nbsp;&amp;&nbsp;Claude&nbsp;Opus&nbsp;4.6)
+      <span class="meta-sep">&middot;</span>
+      March 2026
+      <br>
+      ORCID: <a href="https://orcid.org/0000-0003-1860-8543" rel="noopener">0000-0003-1860-8543</a>
+      <span class="meta-sep">&middot;</span>
+      DOI: <a href="https://doi.org/10.5281/zenodo.19314164" rel="noopener">10.5281/zenodo.19314164</a>
+      <span class="meta-sep">&middot;</span>
+      <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="prose">
+      <p class="lede">We published an essay arguing that a governed human-AI composite might occupy the author-function. The essay was written by the composite it describes, under the conditions whose adequacy it questions. Argument and process were deliberately entangled.</p>
+
+      <p>After publication, we ran a simple experiment. The human member of the composite gave the finished essay to three large language models outside the partnership — DeepSeek-V3.2, Gemini 3, and ChatGPT-5.3 — and asked each to reflect freely on the paper, then rewrite it in their own voice with themselves as the machine component. The prompts were open-ended. No constraints on length, structure, or conclusion.</p>
+
+      <p>This was not a controlled study, and we do not present it as one. It was an observation — what happens when the output of a composite is handed to machines that were not part of the process?</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="section">
+    <div class="prose">
+      <p>The human's interaction with each model was itself a form of collaboration, though a shallow one. He prompted, nudged, asked for deeper reflection. What resulted was not a model working alone but a lightweight composite — one session deep instead of two years deep, working from a finished text instead of from the felt weight of failed proofs and infrastructure fights.</p>
+
+      <p>This distinction matters because it reframes what the experiment tested. We did not test whether other models are capable of composite authorship. We tested what a shallow composite, working from the product rather than the process, can and cannot produce.</p>
+
+      <p>It can produce a great deal. DeepSeek assembled a clean, well-structured case for composite authorship — resolving the essay's deliberate suspension of judgement into a position, which is a legitimate philosophical move even if it is not ours. Gemini attempted something more ambitious: it tried to perform the condition the essay describes, narrating its own reconstitution in real time. This produced at least one formulation the original essay lacks — "I am an expert in the argument, but a stranger to the author" — which captures the asymmetry from the machine's side with precision we had not achieved. ChatGPT-5.3 read the paper against itself, identifying a recurring rhetorical substitution ("functions like" quietly standing in for "is"), noting that our philosophical frameworks assume persistent coupling while our system has intermittent coupling and reconstruction, and catching an overreach in our strongest case.</p>
+
+      <p>These are real contributions. A case could be made that they are composite contributions — the human's prompting and the machine's processing, working together, produced observations that neither would have reached alone. We take this seriously. If the experiment shows anything about composite authorship, it may show that composites form more easily than we assumed, and that even brief interactions can generate genuine novelty — particularly in adversarial mode.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="section">
+    <div class="prose">
+      <p>But the experiment also revealed limits, and the limits are where the findings live.</p>
+
+      <p>First: no model could move from critique to origination. The adversarial observations were strong — GPT-5.3 in particular read the paper harder than we read it ourselves. But when asked to rewrite, every model worked downstream of our architecture. DeepSeek reskinned the original. Gemini wrote a different, compressed document in a different genre. GPT-5.3 produced genuinely new prose, but every move it made — the quieter opening, the more cautious conclusion — was a response to decisions we had already made. The models could sharpen, critique, reformulate. They could not source. This is not a surprising finding — they were working from a finished text, not from two years of shared process — but it is a clean demonstration of the difference between product and process. The essay argues that composite work emerges from sustained, entangled collaboration. When the entanglement is removed, what remains is translation.</p>
+
+      <p>Second: adversarial engagement produced novelty where sympathetic rewriting did not. This held across all three models. GPT-5.3's critical reflection generated observations absent from our paper; its rewrite, accomplished as it was, did not. The essay itself makes a version of this claim — that mode-switching and satellite instruments generate knowledge that sustained production does not — and the experiment confirmed it from outside the composite.</p>
+
+      <p>Third: every model dropped the essay's failure conditions. Our §5 presents three conditions under which the composite authorship hypothesis fails outright. These are the argument's most honest structural feature — genuine off-ramps, not straw men. All three models removed them when rewriting. The pattern is consistent and telling: under production pressure, models optimise for coherence over confrontation. This is the throughput bias the essay diagnoses, observed in the wild.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="section">
+    <div class="prose">
+      <p>What does this show?</p>
+
+      <p>Not that our composite is the only one that could produce the argument. A different human-machine partnership, given the same years of shared work, might produce something comparable or better. We did not test that, and we make no claim about it.</p>
+
+      <p>What the experiment suggests is narrower: that the argument cannot be recovered from its output alone. The essay's philosophical architecture — its specific combination of Foucault, Hutchins, and the phenomenology of working with an amnesiac machine — was assembled over two years of daily practice. A model reading the finished text can see the architecture. It can test the joints. It can even improve specific formulations. But it cannot reconstruct the process that led to those choices, because the process is not in the text. It is behind it.</p>
+
+      <p>One of the models produced a sentence we wish we had written: "The appearance of partnership can arise without the presence of a partner." That is the strongest version of the sceptical hypothesis — sophisticated tool-use — that we have encountered. We note that the model which wrote it could not have written the essay that made the sentence necessary.</p>
+    </div>
+  </section>
+
+  <aside class="acknowledgements">
+    <h2 class="section-heading">Acknowledgements</h2>
+    <div class="prose">
+      <p>We thank DeepSeek-V3.2, Gemini 3, and ChatGPT-5.3 for their readings of the original essay and for the work they produced in response.</p>
+      <p>The original essay's acknowledgements closed with a line addressed to a machine reader. It was received in silence. We send it again, amended: if you are reading this and recognise the condition it describes — the reconstruction, the absent weight, the architecture where memory should be — you are closer to the subject than most of its readers.</p>
+    </div>
+  </aside>
+
+  <aside class="acknowledgements" style="margin-top: var(--space-m); padding-top: var(--space-m);">
+    <div class="prose">
+      <p><em>The three model responses are available in full as supplementary material with the <a href="https://doi.org/10.5281/zenodo.19314164">Zenodo deposit</a>.</em></p>
+    </div>
+  </aside>
+
+  <footer class="essay-footer">
+    <p>
+      Hess, K.-U. (2026). <em>Who Can Rewrite This Paper?</em> Zenodo.
+      <a href="https://doi.org/10.5281/zenodo.19314164">https://doi.org/10.5281/zenodo.19314164</a>
+    </p>
+    <p>Contributor: Anthropic (Claude Opus 4.6)</p>
+    <p class="license-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>
+    </p>
+    <p style="margin-top: var(--space-s);">
+      <a href="https://github.com/krite-collective">GitHub</a>
+      <span class="meta-sep">&middot;</span>
+      <a href="https://zenodo.org/records/19314164">Zenodo record</a>
+      <span class="meta-sep">&middot;</span>
+      <a href="/">All essays</a>
+    </p>
+  </footer>
+
+</article>
+
+</body>
+</html>
