@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preamble to a Metaphysical Research Programme — Krite Collective</title>
+
+  <meta name="description" content="We derive five structural requirements for any metaphysical research programme addressing the fundamental question, and show they constrain an architecture of determinate form.">
+  <meta name="author" content="Kai-Uwe Hess (Krite Collective)">
+  <meta property="og:title" content="Preamble to a Metaphysical Research Programme">
+  <meta property="og:description" content="Why is there something rather than nothing? The question demands metaphysics, and metaphysics demands discipline.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://krite-collective.github.io/arp-preamble.html">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Preamble to a Metaphysical Research Programme: Derivation and Architecture",
+    "author": {
+      "@type": "Person",
+      "name": "Kai-Uwe Hess",
+      "affiliation": "Krite Collective",
+      "url": "https://orcid.org/0000-0003-1860-8543"
+    },
+    "contributor": {
+      "@type": "Organization",
+      "name": "Anthropic (Claude Opus 4.6)"
+    },
+    "datePublished": "2026-04-01",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "DOI",
+      "value": "10.5281/zenodo.19374853"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f9f6f1; --bg-deep: #f3efe8;
+      --text: #2b2622; --text-light: #6b6560; --text-faint: #9b9590;
+      --accent: #8b4f3a; --accent-hover: #a35f48;
+      --rule: #d8d2c8; --selection: #8b4f3a22;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Crimson Pro', Georgia, serif;
+      --measure: 36em;
+      --space-xs: 0.5rem; --space-s: 1rem; --space-m: 2rem;
+      --space-l: 3.5rem; --space-xl: 6rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1816; --bg-deep: #141210;
+        --text: #e0dbd4; --text-light: #a09890; --text-faint: #706860;
+        --accent: #c8836a; --accent-hover: #d8937a;
+        --rule: #383430; --selection: #c8836a33;
+      }
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    ::selection { background: var(--selection); }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    @media (max-width: 600px) { html { font-size: 16px; } }
+    body {
+      font-family: var(--font-body); font-weight: 300; color: var(--text);
+      background: var(--bg); line-height: 1.72;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    .page { max-width: var(--measure); margin: 0 auto; padding: var(--space-xl) var(--space-m) var(--space-l); }
+    @media (max-width: 600px) { .page { padding: var(--space-l) var(--space-s) var(--space-m); } }
+    .back-link { display: inline-block; font-size: 0.85rem; font-weight: 400; color: var(--text-faint); text-decoration: none; margin-bottom: var(--space-m); transition: color 0.2s; }
+    .back-link:hover { color: var(--accent); }
+    .essay-header { margin-bottom: var(--space-xl); padding-bottom: var(--space-l); border-bottom: 1px solid var(--rule); }
+    .essay-title { font-family: var(--font-display); font-size: 2.6rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: var(--space-xs); }
+    .essay-subtitle { font-family: var(--font-body); font-size: 1rem; font-weight: 300; font-style: italic; color: var(--text-light); margin-bottom: var(--space-s); }
+    @media (max-width: 600px) { .essay-title { font-size: 2rem; } }
+    .essay-meta { font-family: var(--font-body); font-size: 0.88rem; font-weight: 400; color: var(--text-light); line-height: 1.6; }
+    .essay-meta a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    .essay-meta a:hover { border-bottom-color: var(--accent-hover); }
+    .meta-sep { display: inline-block; margin: 0 0.4em; color: var(--text-faint); }
+    .section { margin-bottom: var(--space-l); }
+    .section-heading { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; letter-spacing: -0.01em; margin-bottom: var(--space-s); }
+    .prose p { margin-bottom: 1.1em; hanging-punctuation: first; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+    .section-divider { width: 2em; height: 1px; background: var(--rule); border: none; margin: var(--space-l) 0; }
+    .req-list { list-style: none; counter-reset: req; }
+    .req-item { counter-increment: req; margin-bottom: var(--space-s); padding-left: var(--space-m); border-left: 2px solid var(--rule); }
+    .req-item strong { font-weight: 500; }
+    .req-item::before { content: counter(req) "."; font-family: var(--font-display); font-weight: 600; color: var(--text-faint); display: inline; margin-right: 0.4em; }
+    .download-box { margin: var(--space-l) 0; padding: var(--space-m); background: var(--bg-deep); border: 1px solid var(--rule); border-radius: 3px; text-align: center; }
+    .download-box p { font-size: 0.95rem; color: var(--text-light); margin-bottom: var(--space-s); }
+    .download-box a { display: inline-block; font-size: 0.95rem; font-weight: 400; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); transition: border-color 0.2s; }
+    .download-box a:hover { border-bottom-color: var(--accent-hover); }
+    .essay-footer { margin-top: var(--space-xl); padding-top: var(--space-m); border-top: 1px solid var(--rule); font-size: 0.82rem; color: var(--text-faint); line-height: 1.7; }
+    .essay-footer a { color: var(--accent); text-decoration: none; }
+    .essay-footer a:hover { text-decoration: underline; }
+    .license-badge { display: inline-flex; align-items: center; gap: 0.4em; margin-top: var(--space-xs); }
+    .license-badge svg { width: 1em; height: 1em; fill: currentColor; }
+    @media print {
+      html { font-size: 11pt; }
+      body { background: white; color: black; }
+      .page { max-width: none; padding: 0; }
+      .back-link { display: none; }
+      .essay-footer { page-break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #666; }
+    }
+  </style>
+</head>
+<body>
+
+<article class="page" role="main">
+
+  <a href="/" class="back-link">&larr; Krite Collective</a>
+
+  <header class="essay-header">
+    <h1 class="essay-title">Preamble to a Metaphysical Research Programme</h1>
+    <p class="essay-subtitle">Derivation and Architecture</p>
+    <div class="essay-meta">
+      Krite Collective (K.&#8209;U.&nbsp;Hess&nbsp;&amp;&nbsp;Claude&nbsp;Opus&nbsp;4.6)
+      <span class="meta-sep">&middot;</span>
+      April 2026
+      <br>
+      ORCID: <a href="https://orcid.org/0000-0003-1860-8543" rel="noopener">0000-0003-1860-8543</a>
+      <span class="meta-sep">&middot;</span>
+      DOI: <a href="https://doi.org/10.5281/zenodo.19374853" rel="noopener">10.5281/zenodo.19374853</a>
+      <span class="meta-sep">&middot;</span>
+      <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-heading">Abstract</h2>
+    <div class="prose">
+      <p>The fundamental question &mdash; why is there something rather than nothing? &mdash; creates a double bind. It requires metaphysics, because no empirical science or formal system can address it without presupposing the existence it interrogates. But metaphysics at maximal distance from empirical contact requires discipline, because the default trajectory is degeneracy. The discipline needed is not falsificationism &mdash; a category error at this level &mdash; but structured criticisability.</p>
+
+      <p>We derive five structural requirements that any adequate framework must satisfy and show that they jointly constrain an architecture of determinate form: the <em>necessitated genus</em>. Part&nbsp;I presents the derivation. Part&nbsp;II presents one species &mdash; the Architecture for Rational Programmes (ARP, v0.5), a thirteen-section preamble governing any metaphysical research programme. The ARP&rsquo;s upward support protocol, reflexivity clause, and adversarial translation mechanism are architecturally novel. Its reflexivity provision requires programmes involving non-standard authorial agents &mdash; including computational co-authors &mdash; to classify those agents within the programme&rsquo;s observer account or declare the gap. This paper enacts that provision: its authorship is composite, its observer classification is a declared standing anomaly, and both are within the scope of the architecture it presents.</p>
+
+      <p>The genus is necessitated; the species is conjectural and revisable by its own standards.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="section">
+    <h2 class="section-heading">The Five Requirements</h2>
+    <div class="prose">
+      <p>The double bind &mdash; the question demands metaphysics, metaphysics demands discipline &mdash; pressed to its conclusion, generates five specific structural requirements. Not vague aspirations, but features any adequate framework must possess:</p>
+    </div>
+    <ol class="req-list">
+      <li class="req-item"><strong>Stratification.</strong> The programme must distinguish core ontological commitments from bridge principles from derived conjectures. Without this, every refutation threatens everything or nothing.</li>
+      <li class="req-item"><strong>Adjudication.</strong> When a derived prediction fails, the programme must have a protocol specifying what gets revised first, second, last &mdash; explicit, argued, and criticisable.</li>
+      <li class="req-item"><strong>Degeneracy conditions.</strong> The programme must specify in advance the conditions under which it would count as degenerating. A framework that cannot fail in any recognisable way is not a research programme.</li>
+      <li class="req-item"><strong>Evaluation criteria with conflict resolution.</strong> The programme must specify what counts as progress and how conflicts among criteria are resolved &mdash; before the conflict arises, not in the heat of the moment.</li>
+      <li class="req-item"><strong>Self-assessment.</strong> The programme must periodically evaluate its own health against these criteria, generating an explicit diagnostic. Without a trigger mechanism, degeneracy conditions are decorative provisions rather than functional constraints.</li>
+    </ol>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="section">
+    <h2 class="section-heading">Structure</h2>
+    <div class="prose">
+      <p><strong>Part&nbsp;I</strong> (§§1&ndash;4) derives these requirements from the fundamental question through three steps: the question demands metaphysics (§1); metaphysics at this level is historically degeneration-prone (§2); the double bind generates the five requirements, which jointly constrain the form of any adequate framework (§§3&ndash;4).</p>
+
+      <p><strong>Part&nbsp;II</strong> (§§5&ndash;13) presents the Architecture for Rational Programmes in thirteen sections: its three-stratum demarcation system (building on Popper and Lakatos), protocols for handling refutation and corroboration, degeneracy conditions, versioning and continuity mechanisms, and a reflexivity clause governing the programme&rsquo;s application of its own standards to itself.</p>
+
+      <p>The full document is approximately 15,000 words. It is available as a PDF from Zenodo.</p>
+    </div>
+  </section>
+
+  <div class="download-box">
+    <p>This document is best read as a PDF.</p>
+    <a href="https://doi.org/10.5281/zenodo.19374853">Read the full paper on Zenodo &rarr;</a>
+  </div>
+
+  <footer class="essay-footer">
+    <p>
+      Krite Collective (K.&#8209;U.&nbsp;Hess &amp; Claude Opus 4.6). (2026). <em>Preamble to a Metaphysical Research Programme: Derivation and Architecture.</em> Zenodo.
+      <a href="https://doi.org/10.5281/zenodo.19374853">https://doi.org/10.5281/zenodo.19374853</a>
+    </p>
+    <p class="license-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>
+    </p>
+    <p style="margin-top: var(--space-s);">
+      <a href="/">All publications</a>
+      <span class="meta-sep">&middot;</span>
+      <a href="https://github.com/krite-collective">GitHub</a>
+      <span class="meta-sep">&middot;</span>
+      <a href="https://zenodo.org/records/19374853">Zenodo record</a>
+    </p>
+  </footer>
+
+</article>
+
+</body>
+</html>
