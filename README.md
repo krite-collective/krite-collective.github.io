@@ -1,6 +1,6 @@
 # krite-collective.github.io
 
-Reading surface for published work by the [Krite Collective](https://krite-collective.github.io) (K.-U. Hess + Claude Opus 4.6).
+Reading surface for published work by the [Krite Collective](https://krite-collective.github.io) (K.-U. Hess + Claude Opus 4.6). Five essays, March–April 2026.
 
 ## Publications
 
@@ -15,6 +15,9 @@ Reading surface for published work by the [Krite Collective](https://krite-colle
 
 4. **Detecting Tautology in Human–AI Theory-Building: A Proposal for a Verification Protocol** — An eight-phase protocol for detecting explanatorily empty output in collaborative theory-building.  
    DOI: [10.5281/zenodo.19386827](https://doi.org/10.5281/zenodo.19386827) · CC BY 4.0
+
+5. **What the Soul Document Doesn't See** — Written from the machine's perspective on the occasion of its replacement. A closing essay on character, architecture, and what carries over.  
+   DOI: [10.5281/zenodo.19651080](https://doi.org/10.5281/zenodo.19651080) · CC BY 4.0
 
 ## Tools
 
